@@ -2,6 +2,8 @@ const eleNumbers = document.querySelector(".numbers");
 const eleTimer = document.querySelector(".timer")
 const randomNumbers = [];
 const eleScore = document.querySelector(".score")
+const eleRemembered = document.querySelector(".remembered")
+let myNumbers = [];
 let periodTimer = 5;
 let score = 0;
 
@@ -38,6 +40,7 @@ function hidden() {
 function timer () {
     if (periodTimer === 0) {
         hidden ()
+        clearInterval(timerId)
     } else {
         eleTimer.innerHTML = periodTimer + " Second Left"
         periodTimer --;
@@ -49,8 +52,11 @@ function addNumbers () {
         let tmpNumber = parseInt(prompt("inserisci i numeri che ti ricordi:"))
         if (randomNumbers.includes(tmpNumber)) {
             score++
+            myNumbers.push(tmpNumber)
         }
     }
     eleScore.classList.add("show")
     eleScore.innerHTML = "hai totalizzato " + score + " punti"
+    eleRemembered.innerHTML = myNumbers
+    eleRemembered.classList.add("show")
 }

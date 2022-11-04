@@ -48,6 +48,18 @@ body{
     text-align: center; 
 }
 
+.remembered {
+    display: none;
+    font-size: 30px;
+    background-color: green;
+    color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 2rem;
+    letter-spacing: 1rem;
+    text-align: center; 
+}
+
 .show{
     display: block;
 }
